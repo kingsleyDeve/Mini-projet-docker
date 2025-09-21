@@ -117,4 +117,12 @@ docker compose down -v
 
 ✅ Déploiement terminé !
 
-Image du résultat plésent dans le dossier img
+Image du résultat présent dans le dossier img 
+
+**![PayMyBuddy Overview](https://github.com/kingsleyDeve/Mini-projet-docker/blob/main/img/accueil.PNG)**
+
+
+**![PayMyBuddy Accueil Overview](https://github.com/kingsleyDeve/Mini-projet-docker/blob/main/img/connecter.PNG)**
+
+
+**![PayMyBuddy SQL Overview](https://github.com/kingsleyDeve/Mini-projet-docker/blob/main/img/sql.PNG)**
