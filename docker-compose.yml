@@ -1,0 +1,37 @@
+services:
+
+  paymybuddy-db:
+    image: mysql:latest
+    container_name: paymybuddy-db
+    environment:
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - paymybuddy-data:/var/lib/mysql
+      - ./initdb/create.sql:/docker-entrypoint-initdb.d/create.sql:ro
+    networks:
+      - paymybuddy-network
+    ports:
+      - "3306:3306"
+
+  paymybuddy-backend:
+    image: paymybuddy-app:latest
+    container_name: paymybuddy-backend
+    depends_on:
+      - paymybuddy-db
+    environment:
+      - SPRING_DATASOURCE_URL=${SPRING_DATASOURCE_URL}
+      - SPRING_DATASOURCE_USERNAME=${SPRING_DATASOURCE_USERNAME}
+      - SPRING_DATASOURCE_PASSWORD=${SPRING_DATASOURCE_PASSWORD}
+    networks:
+      - paymybuddy-network
+    ports:
+      - "8080:8080"
+
+volumes:
+  paymybuddy-data:
+
+networks:
+  paymybuddy-network:
