@@ -115,7 +115,7 @@ docker compose down -v
 - MySQL est initialisé au premier lancement via `initdb/create.sql`  
 - Les données sont persistées dans le volume **paymybuddy-data**
 
-##  8. Création des images dans  un repository privé 
+##  8. Création des images dans un repository public 
 
 ```bash
 docker tag paymybuddy-db kingsley95/mini-projet-docker:paymybuddy-db
