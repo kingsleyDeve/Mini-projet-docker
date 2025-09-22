@@ -61,6 +61,8 @@ SPRING_DATASOURCE_PASSWORD=MDP
 ### Compiler le backend si nécessaire :
 ```bash
 docker build -t paymybuddy-app .
+
+docker build -t paymybuddy-db -f Dockerfile-db .
 ```
 
 ### Démarrer les conteneurs en arrière-plan :
@@ -89,9 +91,9 @@ docker compose logs -f
 
 ## 🔧 6. Commandes utiles
 
-Recompiler le backend si le code change :
+Recompiler le backend si le code change (optionnel) :
 ```bash
-mvn clean package -DskipTests
+
 docker build -t paymybuddy-app .
 ```
 
@@ -113,6 +115,15 @@ docker compose down -v
 - MySQL est initialisé au premier lancement via `initdb/create.sql`  
 - Les données sont persistées dans le volume **paymybuddy-data**
 
+##  8. Création des images dans  un repository privé 
+
+```bash
+docker tag paymybuddy-db kingsley95/mini-projet-docker:paymybuddy-db
+docker push kingsley95/mini-projet-docker:paymybuddy-db
+
+docker tag paymybuddy-app kingsley95/mini-projet-docker:paymybuddy-app
+docker push kingsley95/mini-projet-docker:paymybuddy-app
+```
 ---
 
 ✅ Déploiement terminé !
