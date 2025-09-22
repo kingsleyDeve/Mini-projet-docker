@@ -137,3 +137,5 @@ Image du résultat présent dans le dossier img
 
 
 **![PayMyBuddy SQL Overview](https://github.com/kingsleyDeve/Mini-projet-docker/blob/main/img/sql.PNG)**
+
+**![PayMyBuddy dockerhub Overview](https://github.com/kingsleyDeve/Mini-projet-docker/blob/main/img/hub.PNG)**
