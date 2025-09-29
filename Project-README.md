@@ -118,11 +118,11 @@ docker compose down -v
 ##  8. Création des images dans un repository privé 
 
 ```bash
-docker tag paymybuddy-db kingsley95/mini-projet-docker:paymybuddy-db
-docker push kingsley95/mini-projet-docker:paymybuddy-db
+docker tag paymybuddy-app:latest localhost:5000/paymybuddy-app:latest
+docker push localhost:5000/paymybuddy-app:latest
 
-docker tag paymybuddy-app kingsley95/mini-projet-docker:paymybuddy-app
-docker push kingsley95/mini-projet-docker:paymybuddy-app
+docker tag paymybuddy-db:latest localhost:5000/paymybuddy-db:latest
+docker push localhost:5000/paymybuddy-db:latest
 ```
 ---
 
@@ -139,4 +139,4 @@ Image du résultat présent dans le dossier img
 **![PayMyBuddy SQL Overview](https://github.com/kingsleyDeve/Mini-projet-docker/blob/main/img/sql.PNG)**
 
 
-**![PayMyBuddy dockerhub Overview](https://github.com/kingsleyDeve/Mini-projet-docker/blob/main/img/prive.PNG)**
+**![PayMyBuddy dockerhub Overview](https://github.com/kingsleyDeve/Mini-projet-docker/blob/main/img/repo.PNG)**

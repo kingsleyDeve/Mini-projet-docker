@@ -38,8 +38,17 @@ services:
     ports:
       - "8080:8080"
 
+  registry:
+    image: registry:2
+    ports:
+      - "5000:5000"
+    container_name: registry
+    volumes:
+      - registry-data:/var/lib/registry
+
 volumes:
   paymybuddy-data:
+  registry-data:
 
 networks:
   paymybuddy-network:
